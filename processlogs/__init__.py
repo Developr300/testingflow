@@ -72,5 +72,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             result = md5_mapping(req_body)
         return func.HttpResponse(json.dumps(result), status_code=200)
     except Exception as err:
-        logging.info('f{err}')
         return func.HttpResponse(str(err), status_code=500)
